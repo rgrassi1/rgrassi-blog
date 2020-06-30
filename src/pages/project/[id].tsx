@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useRouter } from 'next/router';
+import { Container } from './styles';
+import { useProjects } from '../../hooks/projects';
 
 const Project: React.FC = () => {
-  const router = useRouter();
+  const {
+    query: { id },
+  } = useRouter();
+
+  const { projects } = useProjects();
+
+  const project = useMemo(() => {
+    return projects.find((proj) => Number(proj.id) === Number(id));
+  }, [id, projects]);
 
   return (
-    <div>
+    <Container>
       <h1>Project</h1>
-      <pre>{JSON.stringify(router.query)}</pre>
-    </div>
+      <div>
+        <p>{project?.name}</p>
+        <p>{project?.description}</p>
+      </div>
+    </Container>
   );
 };
 

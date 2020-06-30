@@ -1,27 +1,34 @@
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { GetServerSideProps } from 'next';
 import api from '../../services/api';
 import IProject from '../../types/IProject';
 import Header from './Header';
 import Projects from './ProjectsSummary';
 import { Container } from './styles';
+import { useProjects } from '../../hooks/projects';
 
 interface IMainProperties {
   projects: IProject[];
 }
 
 const Main: React.FC<IMainProperties> = ({ projects }) => {
+  const { setProjects } = useProjects();
+
+  useEffect(() => {
+    setProjects(projects);
+  }, [projects, setProjects]);
+
   return (
     <Container>
       <Header />
       <hr />
-      <Projects projects={projects} />
+      <Projects />
     </Container>
   );
 };
 
 export const getServerSideProps: GetServerSideProps<IMainProperties> = async () => {
-  const response = await api.get<IProject[]>('/repos?sort=created');
+  const response = await api.get<IProject[]>('/repos?sort=create');
 
   const formattedProjects = response.data.map((project) => {
     return {
