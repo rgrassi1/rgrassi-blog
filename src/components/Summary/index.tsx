@@ -2,14 +2,15 @@ import React, { useMemo } from 'react';
 import Link from 'next/link';
 import { FcIdea } from 'react-icons/fc';
 import { Container } from './styles';
-import IProject from '../../../types/IProject';
-import { useProjects } from '../../../hooks/projects';
+import IProject from '../../types/IProject';
 
 const numberOfRepos = 3;
 
-const Projects: React.FC = () => {
-  const { projects } = useProjects();
+interface IMyAppProps {
+  projects: IProject[];
+}
 
+const Projects: React.FC<IMyAppProps> = ({ projects }) => {
   const summary = useMemo(() => {
     return projects.filter((_, idx) => idx < numberOfRepos);
   }, [projects]);
@@ -28,7 +29,6 @@ const Projects: React.FC = () => {
                 <a href="/project/[id]">{project.name}</a>
               </Link>
             </h3>
-            {/* <p>{project.description || '<no-description>'}</p> */}
             <p>
               <strong>{project.language}</strong>
               <span>{project.formatted_at}</span>

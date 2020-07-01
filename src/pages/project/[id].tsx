@@ -1,14 +1,17 @@
 import React, { useMemo } from 'react';
+import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { Container } from './styles';
-import { useProjects } from '../../hooks/projects';
+import IProject from '../../types/IProject';
 
-const Project: React.FC = () => {
+interface IMyAppProps extends AppProps {
+  projects: IProject[];
+}
+
+const Project: React.FC<IMyAppProps> = ({ projects }) => {
   const {
     query: { id },
   } = useRouter();
-
-  const { projects } = useProjects();
 
   const project = useMemo(() => {
     return projects.find((proj) => Number(proj.id) === Number(id));
