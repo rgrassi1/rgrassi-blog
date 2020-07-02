@@ -10,9 +10,26 @@ interface IMyAppProps {
   projects: IProject[];
 }
 
+interface ISummary {
+  id: string;
+  name: string;
+  language: string;
+  formatted_at: string;
+}
+
 const Projects: React.FC<IMyAppProps> = ({ projects }) => {
-  const summary = useMemo(() => {
-    return projects.filter((_, idx) => idx < numberOfRepos);
+  const summary = useMemo<ISummary[]>(() => {
+    return projects
+      .filter((_, idx) => idx < numberOfRepos)
+      .map((project) => {
+        const { id, name, language, created_at } = project;
+        return {
+          id,
+          name,
+          language,
+          formatted_at: new Date(created_at).toLocaleString('pt-BR'),
+        };
+      });
   }, [projects]);
 
   return (
@@ -25,8 +42,8 @@ const Projects: React.FC<IMyAppProps> = ({ projects }) => {
         {summary.map((project) => (
           <li key={project.id}>
             <h3>
-              <Link href="/project/[id]" as={`/project/${project.id}`}>
-                <a href="/project/[id]">{project.name}</a>
+              <Link href="/project/[name]" as={`/project/${project.name}`}>
+                <a>{project.name}</a>
               </Link>
             </h3>
             <p>
