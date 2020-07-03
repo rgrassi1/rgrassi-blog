@@ -1,26 +1,10 @@
 import React from 'react';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
-import styled from 'styled-components';
 import api from '../services/api';
 import IProject from '../types/IProject';
-import Header from '../components/Header';
-import Summary from '../components/Summary';
-// import { Container } from './styles';
-
-const Container = styled.div`
-  max-width: 920px;
-  width: 100%;
-  margin: 0 auto;
-
-  > hr {
-    border: 0;
-    background: #c66;
-    border-radius: 6px;
-    display: block;
-    height: 16px;
-    margin: 40px 32px;
-  }
-`;
+import Header from '../components/Index/Header';
+import Summary from '../components/Index/Summary';
+import { Container } from '../components/Index/styles';
 
 interface IMainProps {
   projects: IProject[];

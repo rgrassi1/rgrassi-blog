@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import Link from 'next/link';
 import { FcIdea } from 'react-icons/fc';
 import { Container } from './styles';
-import IProject from '../../types/IProject';
+import IProject from '../../../types/IProject';
 
 const numberOfRepos = 3;
 
