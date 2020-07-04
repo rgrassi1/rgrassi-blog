@@ -20,16 +20,13 @@ export default createGlobalStyle`
   }
 
   body, input, button {
-    font-family: 'Bitter', serif;
+    font-family: 'bitter', serif;
   }
 
   button {
     cursor: pointer;
   }
 
-  h1, h2, h3, h4, h5, h6, strong {
-    font-family: 'dosis', sans-serif;
-    font-weight: 500;
+  h1, h2, h3, h4, h5, h6, p, strong {
     color: #444;
-  }
 `;

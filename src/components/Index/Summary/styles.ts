@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   > h2 {
-    color: #444;
     font-size: 3em;
     font-weight: 400;
     text-transform: uppercase;
@@ -64,7 +63,6 @@ export const Container = styled.section`
     justify-content: space-between;
 
     font-size: 1.75em;
-    color: #444;
     font-weight: 400;
   }
 

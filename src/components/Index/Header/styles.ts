@@ -4,8 +4,8 @@ export const Container = styled.header`
   padding: 32px 32px;
 
   > h1 {
+    font-family: 'dosis', sans-serif;
     font-size: 6em;
-    color: #444;
     text-transform: uppercase;
     letter-spacing: 6px;
     font-weight: 600;
@@ -14,7 +14,6 @@ export const Container = styled.header`
   > p {
     margin-top: 32px;
     font-size: 2.75em;
-    color: #444;
     font-weight: 500;
     line-height: 1.5;
   }
