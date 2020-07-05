@@ -79,15 +79,23 @@ export const MainSection = styled.section`
   }
 
   > article > p {
-    font-size: 2em;
+    font-size: 1.75em;
     display: block;
     line-height: 1.5;
-    margin: 16px 0;
+    margin: 24px 0;
     color: #444;
   }
 
   > footer {
-    padding: 48px;
+    padding: 0 48px 48px 48px;
+  }
+
+  > footer > a {
+    font-size: 1.75em;
+  }
+
+  > footer > a > svg {
+    vertical-align: middle;
   }
 `;
 
@@ -181,5 +189,36 @@ export const Meta = styled.aside`
     top: 124px;
     width: 360px;
     margin-left: -360px;
+  }
+`;
+
+export const ButtonLink = styled.a`
+  background: #444;
+  border-radius: 4px;
+  padding: 8px 16px;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-family: 'Dosis';
+  font-weight: 500;
+  letter-spacing: 0.1em;
+
+  transition: background 0.3s;
+
+  &:hover {
+    background: #fff;
+    color: #c66;
+  }
+`;
+
+export const TextLink = styled.a`
+  color: #c66;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0 4px;
+  &:hover {
+    text-decoration: underline;
   }
 `;

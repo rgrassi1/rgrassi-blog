@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiTwitter, FiLinkedin } from 'react-icons/fi';
+import { FiTwitter, FiLinkedin, FiFileText } from 'react-icons/fi';
 import { Container } from './styles';
 
 const Header: React.FC = () => {
@@ -7,7 +7,7 @@ const Header: React.FC = () => {
     <Container>
       <h1>Rodrigo Grassi</h1>
       <p>
-        Software Developer from the Brazil, focusing his efforts on creating
+        Full Stack Developer from the Brazil, focusing his efforts on creating
         useful software products. One day he hopes to make something that really
         make the difference in the life of peoples.
       </p>
@@ -28,6 +28,12 @@ const Header: React.FC = () => {
             rel="noopener noreferrer"
           >
             <FiLinkedin size={24} />
+          </a>
+        </li>
+        <li>
+          <a href="/about" target="_blank" rel="noopener noreferrer">
+            <FiFileText size={24} />
+            Profile
           </a>
         </li>
       </ul>

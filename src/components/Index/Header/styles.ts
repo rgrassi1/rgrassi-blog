@@ -47,6 +47,17 @@ export const Container = styled.header`
     transition: background 0.3s;
   }
 
+  > ul > li:last-child > a {
+    color: #444;
+    font-size: 1.5em;
+    font-weight: 500;
+    background: transparent;
+  }
+
+  > ul > li:last-child > a > svg {
+    margin-right: 8px;
+  }
+
   > ul > li > a:hover {
     background: #fff;
     color: #c66;
