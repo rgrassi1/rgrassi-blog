@@ -11,14 +11,57 @@ export const Container = styled.div`
 `;
 
 export const TopBar = styled.div`
+  position: relative;
+  padding-left: 48px;
+
   @media only screen and (min-width: 1128px) {
     position: fixed;
     top: 48px;
     width: 360px;
     margin-left: -360px;
-    height: 64px;
-    background: #c60;
     margin-bottom: 8px;
+  }
+
+  > a {
+    color: #444;
+    display: inline-block;
+    padding: 8px;
+    line-height: 36px;
+    height: 36px;
+    font-size: 2em;
+    border-radius: 4px;
+    border: 10px solid transparent;
+    text-decoration: none;
+  }
+
+  > a:first-child {
+    border-color: #444;
+  }
+
+  > a:first-child:hover {
+    border-color: transparent;
+    text-decoration: underline;
+  }
+
+  > a + a {
+    margin-left: 8px;
+  }
+
+  > a:hover {
+    background: #fff;
+    color: #c66;
+  }
+
+  > a > svg {
+    vertical-align: middle;
+  }
+
+  @media only screen and (max-width: 1127px) {
+    > a:last-child {
+      position: absolute;
+      right: 0.25em;
+    }
+    padding: 36px 0 0 36px;
   }
 `;
 
@@ -210,6 +253,10 @@ export const ButtonLink = styled.a`
   &:hover {
     background: #fff;
     color: #c66;
+  }
+
+  > svg {
+    margin-right: 8px;
   }
 `;
 

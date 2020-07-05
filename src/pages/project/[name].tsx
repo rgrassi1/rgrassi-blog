@@ -1,6 +1,9 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { FiTwitter, FiMail, FiGithub } from 'react-icons/fi';
+import { FcIdea } from 'react-icons/fc';
+import { TiThMenu } from 'react-icons/ti';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
+import Link from 'next/link';
 import api from '../../services/api';
 import IProject from '../../types/IProject';
 import {
@@ -19,7 +22,21 @@ interface IProjectProps {
 const Project: React.FC<IProjectProps> = ({ project }) => {
   return (
     <Container>
-      <TopBar />
+      <TopBar>
+        <Link href="/">
+          <a>home</a>
+        </Link>
+        <Link href="/projects">
+          <a>
+            <FcIdea size={24} />
+          </a>
+        </Link>
+        <Link href="#nav">
+          <a>
+            <TiThMenu size={24} />
+          </a>
+        </Link>
+      </TopBar>
       <MainSection>
         <header>
           <h1>{project.name}</h1>
@@ -41,7 +58,7 @@ const Project: React.FC<IProjectProps> = ({ project }) => {
           <h4>Support</h4>
           <p>
             <strong>Browsers - </strong>
-            Funciona perfeitamente em todos os navegadores modernos e no IE9 +.
+            Works perfectly on all modern browsers and IE9 +.
           </p>
           <p>
             <strong>Bugs - </strong>
