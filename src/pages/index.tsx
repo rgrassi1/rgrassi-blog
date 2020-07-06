@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import Head from 'next/head';
 import api from '../services/api';
 import IProject from '../types/IProject';
 import Header from '../components/Index/Header';
@@ -38,6 +39,17 @@ const Main: React.FC = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Container>
+      <Head>
+        <title>Rodrigo Grassi - Blog</title>
+        <meta name="description" content="Homepage" />
+        <meta
+          property="og:title"
+          content="Rodrigo Grassi - Blog"
+          key="ogtitle"
+        />
+        <meta property="og:description" content="Homepage" key="ogdesc" />
+      </Head>
+
       <Header />
       <hr />
       <Summary projects={projects} />

@@ -1,7 +1,6 @@
 import React from 'react';
 import { FiGithub } from 'react-icons/fi';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
-import { ParsedUrlQuery } from 'querystring';
 import api from '../../services/api';
 import TopBar from '../../components/TopBar';
 import Profile from '../../components/Profile';
