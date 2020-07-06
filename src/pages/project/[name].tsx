@@ -1,19 +1,14 @@
 import React from 'react';
-import { FiTwitter, FiMail, FiGithub } from 'react-icons/fi';
-import { FcIdea } from 'react-icons/fc';
-import { TiThMenu } from 'react-icons/ti';
+import { FiGithub } from 'react-icons/fi';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
-import Link from 'next/link';
 import api from '../../services/api';
+import TopBar from '../../components/TopBar';
+import Profile from '../../components/Profile';
+import Footer from '../../components/Footer';
+import ButtonLink from '../../components/ButtonLink';
+import TextLink from '../../components/TextLink';
 import IProject from '../../types/IProject';
-import {
-  Container,
-  MainSection,
-  TopBar,
-  Meta,
-  ButtonLink,
-  TextLink,
-} from '../../components/Project/styles';
+import { Container, MainSection } from '../../components/Project/styles';
 
 interface IProjectProps {
   project: IProject;
@@ -22,21 +17,7 @@ interface IProjectProps {
 const Project: React.FC<IProjectProps> = ({ project }) => {
   return (
     <Container>
-      <TopBar>
-        <Link href="/">
-          <a>home</a>
-        </Link>
-        <Link href="/projects">
-          <a>
-            <FcIdea size={24} />
-          </a>
-        </Link>
-        <Link href="#nav">
-          <a>
-            <TiThMenu size={24} />
-          </a>
-        </Link>
-      </TopBar>
+      <TopBar />
       <MainSection>
         <header>
           <h1>{project.name}</h1>
@@ -52,7 +33,7 @@ const Project: React.FC<IProjectProps> = ({ project }) => {
           <h4>What is this?</h4>
           <p>{project.description}</p>
           <p>
-            <ButtonLink href="">Demo</ButtonLink>
+            <ButtonLink url={project.html_url}>Demo</ButtonLink>
           </p>
           <hr />
           <h4>Support</h4>
@@ -63,10 +44,10 @@ const Project: React.FC<IProjectProps> = ({ project }) => {
           <p>
             <strong>Bugs - </strong>
             If you find a bug
-            <TextLink href="mailto:rgrassi1@gmail.com">email me</TextLink>
+            <TextLink url="mailto:rgrassi1@gmail.com">email me</TextLink>
             or
             <TextLink
-              href={project.html_url}
+              url={project.html_url}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -76,7 +57,7 @@ const Project: React.FC<IProjectProps> = ({ project }) => {
           </p>
           <p>
             <TextLink
-              href={project.html_url}
+              url={project.html_url}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -84,7 +65,7 @@ const Project: React.FC<IProjectProps> = ({ project }) => {
             </TextLink>
             {' | '}
             <TextLink
-              href={project.html_url}
+              url={project.html_url}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -93,53 +74,18 @@ const Project: React.FC<IProjectProps> = ({ project }) => {
           </p>
         </article>
         <footer>
-          <ButtonLink href="https://github.com/rgrassi1" target="_blank">
-            <FiGithub size={24} />
+          <ButtonLink
+            icon={FiGithub}
+            url="https://github.com/rgrassi1"
+            target="_blank"
+          >
             Find me on GitHub
           </ButtonLink>
         </footer>
+        <hr />
       </MainSection>
-      <Meta>
-        <div>
-          <a href="/about">
-            <img src="/profile.jpeg" alt="Profile" />
-          </a>
-          <h4>
-            <a href="/about">Rodrigo Grassi</a>
-          </h4>
-          <h6>Full Stack Developer</h6>
-          <div>
-            <p>
-              I&#39;m a full stack developer from Brazil. I am looking for a
-              challenge that can make a difference in my life and that of the
-              people around me.
-            </p>
-          </div>
-          <ul>
-            <li>
-              <a
-                href="https://twitter.com/rgrassi1983"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FiTwitter />
-                @rgrassi1983
-              </a>
-            </li>
-            <li>
-              <a
-                href="mailto:rgrassi1@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FiMail />
-                Email
-              </a>
-            </li>
-          </ul>
-        </div>
-        <nav />
-      </Meta>
+      <Profile />
+      <Footer />
     </Container>
   );
 };

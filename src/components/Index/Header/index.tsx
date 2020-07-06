@@ -1,5 +1,7 @@
 import React from 'react';
+import Link from 'next/link';
 import { FiTwitter, FiLinkedin, FiFileText } from 'react-icons/fi';
+import ButtonLink from '../../ButtonLink';
 import { Container } from './styles';
 
 const Header: React.FC = () => {
@@ -7,34 +9,34 @@ const Header: React.FC = () => {
     <Container>
       <h1>Rodrigo Grassi</h1>
       <p>
-        Full Stack Developer from the Brazil, focusing his efforts on creating
+        Full Stack Developer from the Brasil, focusing his efforts on creating
         useful software products. One day he hopes to make something that really
         make the difference in the life of peoples.
       </p>
       <ul>
         <li>
-          <a
-            href="https://twitter.com/rgrassi1983"
+          <ButtonLink
+            url="https://twitter.com/rgrassi1983"
+            icon={FiTwitter}
             target="_blank"
             rel="noopener noreferrer"
-          >
-            <FiTwitter size={24} />
-          </a>
+          />
         </li>
         <li>
-          <a
-            href="https://www.linkedin.com/in/rgrassi1983/"
+          <ButtonLink
+            url="https://www.linkedin.com/in/rgrassi1983"
+            icon={FiLinkedin}
             target="_blank"
             rel="noopener noreferrer"
-          >
-            <FiLinkedin size={24} />
-          </a>
+          />
         </li>
         <li>
-          <a href="/about" target="_blank" rel="noopener noreferrer">
-            <FiFileText size={24} />
-            Profile
-          </a>
+          <Link href="/about">
+            <a rel="noopener noreferrer">
+              <FiFileText size={24} />
+              Profile
+            </a>
+          </Link>
         </li>
       </ul>
     </Container>
