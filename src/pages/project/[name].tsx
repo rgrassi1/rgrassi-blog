@@ -1,6 +1,7 @@
 import React from 'react';
 import { FiGithub } from 'react-icons/fi';
-import { GetServerSideProps, GetServerSidePropsContext } from 'next';
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
+import { ParsedUrlQuery } from 'querystring';
 import api from '../../services/api';
 import TopBar from '../../components/TopBar';
 import Profile from '../../components/Profile';
@@ -10,11 +11,34 @@ import TextLink from '../../components/TextLink';
 import IProject from '../../types/IProject';
 import { Container, MainSection } from '../../components/Project/styles';
 
-interface IProjectProps {
-  project: IProject;
-}
+export const getStaticPaths: GetStaticPaths = async () => {
+  const projects = await api.get<IProject[]>(
+    '/users/rgrassi1/repos?sort=create',
+  );
 
-const Project: React.FC<IProjectProps> = ({ project }) => {
+  const paths = projects.data.map((project) => ({
+    params: {
+      name: project.name,
+    },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const response = await api.get<IProject>(`repos/rgrassi1/${params?.name}`);
+
+  return {
+    props: { project: response.data },
+  };
+};
+
+const Project: React.FC = ({
+  project,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Container>
       <TopBar />
@@ -88,15 +112,6 @@ const Project: React.FC<IProjectProps> = ({ project }) => {
       <Footer />
     </Container>
   );
-};
-
-export const getServerSideProps: GetServerSideProps<IProjectProps> = async ({
-  query,
-}: GetServerSidePropsContext) => {
-  const { name } = query;
-  const response = await api.get<IProject>(`repos/rgrassi1/${name}`);
-
-  return { props: { project: response.data } };
 };
 
 export default Project;

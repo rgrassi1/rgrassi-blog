@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { GetServerSideProps, GetServerSidePropsContext } from 'next';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import api from '../services/api';
 import IProject from '../types/IProject';
 import Header from '../components/Index/Header';
@@ -26,11 +26,16 @@ export const Container = styled.div`
   }
 `;
 
-interface IMainProps {
-  projects: IProject[];
-}
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await api.get<IProject[]>(
+    '/users/rgrassi1/repos?sort=create',
+  );
+  return { props: { projects: response.data } };
+};
 
-const Main: React.FC<IMainProps> = ({ projects }) => {
+const Main: React.FC = ({
+  projects,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Container>
       <Header />
@@ -40,15 +45,6 @@ const Main: React.FC<IMainProps> = ({ projects }) => {
       <Footer />
     </Container>
   );
-};
-
-export const getServerSideProps: GetServerSideProps<IMainProps> = async (
-  ctx: GetServerSidePropsContext,
-) => {
-  const response = await api.get<IProject[]>(
-    '/users/rgrassi1/repos?sort=create',
-  );
-  return { props: { projects: response.data } };
 };
 
 export default Main;
