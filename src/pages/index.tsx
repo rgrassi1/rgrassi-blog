@@ -46,7 +46,8 @@ const Main: React.FC = ({
         <meta name="description" content="Rodrigo Grassi's blog" />
         <link rel="canonical" href="https://rodrigo-grassi.dev" />
         <meta name="author" content="Rodrigo Grassi" />
-        <meta name="robots" content="index, nofollow" />
+        <meta name="robots" content="index,nofollow" />
+        <meta name="googlebot" content="index,nofollow" />
 
         <meta property="og:title" content="Rodrigo Grassi - Blog" />
         <meta property="og:description" content="Rodrigo Grassi's blog" />
