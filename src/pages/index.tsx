@@ -40,14 +40,20 @@ const Main: React.FC = ({
   return (
     <Container>
       <Head>
+        <meta charSet="utf-8" />
+
         <title>Rodrigo Grassi - Blog</title>
-        <meta name="description" content="Homepage" />
-        <meta
-          property="og:title"
-          content="Rodrigo Grassi - Blog"
-          key="ogtitle"
-        />
-        <meta property="og:description" content="Homepage" key="ogdesc" />
+        <meta name="description" content="Rodrigo Grassi's blog" />
+        <link rel="canonical" href="https://rodrigo-grassi.dev" />
+        <meta name="author" content="Rodrigo Grassi" />
+        <meta name="robots" content="index, nofollow" />
+
+        <meta property="og:title" content="Rodrigo Grassi - Blog" />
+        <meta property="og:description" content="Rodrigo Grassi's blog" />
+        <meta property="og:url" content="https://rodrigo-grassi.dev" />
+        <meta property="og:site_name" content="rodrigo-grassi.dev" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="profile.jpeg" />
       </Head>
 
       <Header />
