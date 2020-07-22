@@ -27,9 +27,5 @@ export const RootProvider: React.FC = ({ children }) => {
 export function useProjects(): IProjectsContextData {
   const context = useContext(RootContext);
 
-  if (!context) {
-    throw new Error('useProjects must be used within an ProjectsProvider');
-  }
-
   return context;
 }

@@ -29,4 +29,10 @@ export default createGlobalStyle`
   h1, h2, h3, h4, h5, h6, p, strong {
     color: #444;
   }
+
+  @media only screen and (max-width: 450px) {
+    html {
+      font-size: 48.5%;
+    }
+  }
 `;

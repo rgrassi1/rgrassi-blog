@@ -2,32 +2,23 @@ import React, { useMemo } from 'react';
 import Link from 'next/link';
 import { FcIdea } from 'react-icons/fc';
 import { Container } from './styles';
+import SummaryItem from '../SummaryItem';
 import IProject from '../../../types/IProject';
 
-const numberOfRepos = 3;
+const numberOfProjects = 4;
 
-interface IMyAppProps {
+interface ISummaryProps {
   projects: IProject[];
 }
 
-interface ISummary {
-  id: string;
-  name: string;
-  language: string;
-  formatted_at: string;
-}
-
-const Projects: React.FC<IMyAppProps> = ({ projects }) => {
-  const summary = useMemo<ISummary[]>(() => {
+const Summary: React.FC<ISummaryProps> = ({ projects }) => {
+  const summary = useMemo(() => {
     return projects
-      .filter((_, idx) => idx < numberOfRepos)
+      .filter((_, idx) => idx < numberOfProjects)
       .map((project) => {
-        const { id, name, language, created_at } = project;
         return {
-          id,
-          name,
-          language,
-          formatted_at: new Date(created_at).toLocaleString('pt-BR'),
+          ...project,
+          formatted_at: new Date(project.created_at).toLocaleString('pt-BR'),
         };
       });
   }, [projects]);
@@ -40,21 +31,11 @@ const Projects: React.FC<IMyAppProps> = ({ projects }) => {
       </h2>
       <ul>
         {summary.map((project) => (
-          <li key={project.id}>
-            <h3>
-              <Link href="/project/[name]" as={`/project/${project.name}`}>
-                <a>{project.name}</a>
-              </Link>
-            </h3>
-            <p>
-              <strong>{project.language}</strong>
-              <span>{project.formatted_at}</span>
-            </p>
-          </li>
+          <SummaryItem project={project} key={project.id} />
         ))}
       </ul>
     </Container>
   );
 };
 
-export default Projects;
+export default Summary;
