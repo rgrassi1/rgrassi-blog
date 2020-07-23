@@ -30,6 +30,11 @@ export default createGlobalStyle`
     color: #444;
   }
 
+  img {
+    display: block;
+    max-width: 100%
+  }
+
   @media only screen and (max-width: 450px) {
     html {
       font-size: 48.5%;

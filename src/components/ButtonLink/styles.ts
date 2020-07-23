@@ -11,7 +11,7 @@ export const Container = styled.a`
   font-size: 0.9em;
   font-family: 'Dosis';
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 2px;
 
   transition: background 0.3s;
 
