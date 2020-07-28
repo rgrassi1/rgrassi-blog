@@ -1,18 +1,23 @@
 import styled from 'styled-components';
 import { Container as TopBar } from '../TopBar/styles';
+import { Container as ButtonLink } from '../ButtonLink/styles';
 
 export const Container = styled.div`
   max-width: 768px;
   width: 100%;
   margin: 0 auto;
 
+  ${ButtonLink} {
+    display: inline;
+  }
+
   ${TopBar} {
     position: relative;
-    padding-left: 48px;
+    padding-left: 32px;
 
     @media only screen and (min-width: 1128px) {
       position: fixed;
-      top: 48px;
+      top: 32px;
       width: 360px;
       margin-left: -360px;
       margin-bottom: 8px;
@@ -23,7 +28,7 @@ export const Container = styled.div`
         position: absolute;
         right: 1em;
       }
-      padding: 48px 0 0 48px;
+      padding: 32px 32px 0 32px;
     }
   }
 
@@ -34,7 +39,7 @@ export const Container = styled.div`
 
 export const MainSection = styled.section`
   > header {
-    padding: 48px;
+    padding: 32px;
   }
 
   > header > h1 {
@@ -55,16 +60,16 @@ export const MainSection = styled.section`
   }
 
   > hr {
-    margin: 0 48px;
+    margin: 0 32px;
     padding: 0;
     height: 16px;
     border: 0;
     border-radius: 6px;
-    background: #c66;
+    background: var(--secondary-color);
   }
 
   > article {
-    padding: 48px;
+    padding: 32px;
   }
 
   > article > h3 {
@@ -93,11 +98,11 @@ export const MainSection = styled.section`
     display: block;
     line-height: 1.5;
     margin: 24px 0;
-    color: #444;
+    color: var(--primary-color);
   }
 
   > footer {
-    padding: 0 48px 48px 48px;
+    padding: 0 32px 32px 32px;
   }
 
   > footer > a {

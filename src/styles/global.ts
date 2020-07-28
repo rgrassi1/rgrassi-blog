@@ -8,14 +8,17 @@ export default createGlobalStyle`
   }
 
   html {
+    --primary-color: #444;
+    --secondary-color: #c66;
+    --background-color: #f9f4ed;
     font-size: 62.5%;
   }
 
   body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    background: #F9F4ED;
-    color: #fff;
+    background: var(--background-color);
+    color: var(--primary-color);
   }
 
   body, input, button {
@@ -24,10 +27,6 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
-  }
-
-  h1, h2, h3, h4, h5, h6, p, strong {
-    color: #444;
   }
 
   img {

@@ -31,11 +31,10 @@ const Header: React.FC = () => {
           />
         </li>
         <li>
-          <Link href="/about">
-            <a rel="noopener noreferrer">
-              <FiFileText size={24} />
-              Profile
-            </a>
+          <Link href="/about" passHref>
+            <ButtonLink url="/about" icon={FiFileText}>
+              <span>Profile</span>
+            </ButtonLink>
           </Link>
         </li>
       </ul>

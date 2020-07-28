@@ -18,5 +18,6 @@ export const Container = styled.section`
   > ul {
     margin-top: 32px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+    list-style: none;
   }
 `;

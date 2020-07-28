@@ -23,7 +23,7 @@ export const Container = styled.li`
   }
 
   h3 > a:hover {
-    color: #c66;
+    color: var(--secondary-color);
   }
 
   > h3 > a::before {
@@ -51,6 +51,6 @@ export const Container = styled.li`
 
   > p > strong::before {
     content: '# ';
-    color: #c66;
+    color: var(--secondary-color);
   }
 `;

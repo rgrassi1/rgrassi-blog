@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.aside`
   > div {
-    padding: 48px;
+    padding: 32px;
   }
 
   > div::after {
@@ -14,7 +14,7 @@ export const Container = styled.aside`
   > div > a > img {
     float: left;
     width: 72px;
-    border: 4px solid #444;
+    border: 4px solid var(--primary-color);
     border-radius: 4px;
     margin: 0 16px 16px 0;
   }
@@ -34,7 +34,7 @@ export const Container = styled.aside`
   }
 
   > div > h4 > a:hover {
-    color: #c66;
+    color: var(--secondary-color);
   }
 
   > div > h6 {
@@ -69,7 +69,7 @@ export const Container = styled.aside`
 
   > div > ul > li > a {
     text-decoration: none;
-    color: #444;
+    color: var(--primary-color);
     font-size: 1.35em;
     font-weight: 600;
 
@@ -77,7 +77,7 @@ export const Container = styled.aside`
   }
 
   > div > ul > li > a:hover {
-    color: #c66;
+    color: var(--secondary-color);
   }
 
   > div > ul > li > a > svg {

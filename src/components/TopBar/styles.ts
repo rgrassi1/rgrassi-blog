@@ -2,19 +2,19 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   > a {
-    color: #444;
+    color: var(--primary-color);
     display: inline-block;
     padding: 8px;
     line-height: 36px;
     height: 36px;
     font-size: 2em;
     border-radius: 4px;
-    border: 10px solid transparent;
+    border: 8px solid transparent;
     text-decoration: none;
   }
 
   > a:first-child {
-    border-color: #444;
+    border-color: var(--primary-color);
   }
 
   > a:first-child:hover {
@@ -23,12 +23,12 @@ export const Container = styled.div`
   }
 
   > a + a {
-    margin-left: 8px;
+    margin-left: 24px;
   }
 
   > a:hover {
     background: #fff;
-    color: #c66;
+    color: var(--secondary-color);
   }
 
   > a > svg {

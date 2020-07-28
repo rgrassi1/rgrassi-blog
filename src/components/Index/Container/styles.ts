@@ -7,7 +7,7 @@ export const Container = styled.div`
 
   > hr {
     border: 0;
-    background: #c66;
+    background: var(--secondary-color);
     border-radius: 6px;
     display: block;
     height: 16px;
