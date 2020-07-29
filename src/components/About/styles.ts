@@ -16,3 +16,12 @@ export const Container = styled.div`
     }
   }
 `;
+
+export const MainSection = styled.section`
+  > article {
+    padding: 24px;
+  }
+
+  > article > figure {
+  }
+`;
