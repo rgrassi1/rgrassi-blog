@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.footer`
-  padding: 48px;
+  padding: 24px;
   > p {
     font-size: 1.75em;
     font-weight: 500;

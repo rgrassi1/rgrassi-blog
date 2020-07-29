@@ -12,7 +12,10 @@ export const getStaticProps: GetStaticProps = async () => {
   const response = await api.get<IProject[]>(
     '/users/rgrassi1/repos?sort=create',
   );
-  return { props: { projects: response.data } };
+  return {
+    props: { projects: response.data },
+    revalidate: 60 * 60 * 24,
+  };
 };
 
 const Main: React.FC = ({

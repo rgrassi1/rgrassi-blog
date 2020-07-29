@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Container as ButtonLink } from '../../ButtonLink/styles';
 
 export const Container = styled.header`
-  padding: 32px 32px;
+  padding: 24px 24px;
 
   > h1 {
     font-family: 'dosis', sans-serif;

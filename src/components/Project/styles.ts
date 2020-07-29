@@ -27,8 +27,9 @@ export const Container = styled.div`
       > a:last-child {
         position: absolute;
         right: 1em;
+        transform: translateY(-25%);
       }
-      padding: 32px 32px 0 32px;
+      padding: 40px 24px 0 24px;
     }
   }
 
@@ -39,7 +40,7 @@ export const Container = styled.div`
 
 export const MainSection = styled.section`
   > header {
-    padding: 32px;
+    padding: 24px;
   }
 
   > header > h1 {
@@ -60,7 +61,7 @@ export const MainSection = styled.section`
   }
 
   > hr {
-    margin: 0 32px;
+    margin: 0 24px;
     padding: 0;
     height: 16px;
     border: 0;
@@ -69,7 +70,7 @@ export const MainSection = styled.section`
   }
 
   > article {
-    padding: 32px;
+    padding: 24px;
   }
 
   > article > h3 {
@@ -102,7 +103,7 @@ export const MainSection = styled.section`
   }
 
   > footer {
-    padding: 0 32px 32px 32px;
+    padding: 0 24px 24px 24px;
   }
 
   > footer > a {

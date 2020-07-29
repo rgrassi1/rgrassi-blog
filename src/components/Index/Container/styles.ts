@@ -11,7 +11,7 @@ export const Container = styled.div`
     border-radius: 6px;
     display: block;
     height: 16px;
-    margin: 40px 32px;
+    margin: 40px 24px;
   }
 
   > hr:last-of-type {

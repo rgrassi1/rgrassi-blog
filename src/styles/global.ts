@@ -34,6 +34,10 @@ export default createGlobalStyle`
     max-width: 100%
   }
 
+  a {
+    color: inherit;
+  }
+
   @media only screen and (max-width: 450px) {
     html {
       font-size: 48.5%;

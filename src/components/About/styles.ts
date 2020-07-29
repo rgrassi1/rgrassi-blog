@@ -8,10 +8,11 @@ export const Container = styled.div`
 
   ${TopBar} {
     position: relative;
-    padding: 32px;
+    padding: 40px 24px 0 24px;
     > a:last-child {
       position: absolute;
       right: 1em;
+      transform: translateY(-25%);
     }
   }
 `;

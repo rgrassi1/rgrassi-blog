@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.aside`
   > div {
-    padding: 32px;
+    padding: 24px;
   }
 
   > div::after {

@@ -5,7 +5,7 @@ export const Container = styled.section`
     font-size: 3em;
     font-weight: 400;
     text-transform: uppercase;
-    padding: 0 32px;
+    padding: 0 24px;
     letter-spacing: 3px;
     line-height: 38px;
   }

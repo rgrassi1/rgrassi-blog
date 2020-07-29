@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.li`
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 16px 32px 32px 32px;
+  padding: 16px 24px 24px 24px;
   position: relative;
 
   &:hover {
